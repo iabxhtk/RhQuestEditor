@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Tab xmlns="http://javafx.com/javafx"
+     xmlns:fx="http://javafx.com/fxml"
+     fx:controller="org.yologn.RhQuestEditor.controllers.EtcTabController"
+     closable="false" text="Etc"
+>
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+                <CheckBox fx:id="notifyCheck" layoutX="116.0" layoutY="24.0" mnemonicParsing="false"
+                          text="Level Notification"/>
+                <TextField fx:id="notify1Field" layoutX="116.0" layoutY="54.0"/>
+                <Label layoutX="28.0" layoutY="58.0" text="1# Notification"/>
+                <TextField fx:id="notify2Field" layoutX="116.0" layoutY="86.0"/>
+                <Label layoutX="28.0" layoutY="90.0" text="2# Notification"/>
+            </children>
+        </AnchorPane>
+    </content>
+</Tab>

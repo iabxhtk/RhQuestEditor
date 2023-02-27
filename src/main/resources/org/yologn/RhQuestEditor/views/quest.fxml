@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="borderpaane" maxHeight="624.0" maxWidth="998.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.yologn.RhQuestEditor.controllers.Controller">
+   <children>
+      <HBox>
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefWidth="100.0" text="Select quest">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets right="5.0" top="5.0" />
+               </padding></Label>
+            <ComboBox fx:id="questBox" prefHeight="26.0" prefWidth="889.0" />
+         </children>
+      </HBox>
+      <VBox>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+         <children>
+            <TabPane prefHeight="568.0" prefWidth="890.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="General">
+                     <content>
+                        <HBox>
+                           <children>
+                              <VBox prefHeight="488.0" prefWidth="890.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Name">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="questNameField" prefHeight="25.0" prefWidth="400.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="32.0" prefWidth="616.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Description">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="questDescField" prefHeight="25.0" prefWidth="400.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin></HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Next quest">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <ComboBox fx:id="childQuestBox" prefWidth="400.0" />
+                                          <Button fx:id="gotoNextBtn" mnemonicParsing="false" text="&gt;">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="delNextBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="520.0" layoutY="10.0" mnemonicParsing="false" text="X">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="65.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Previous quest">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <ComboBox fx:id="parentQuestBox" prefWidth="400.0" />
+                                          <Button fx:id="gotoPrevBtn" mnemonicParsing="false" text="&gt;">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="delPrevBtn" layoutX="520.0" layoutY="10.0" mnemonicParsing="false" text="X">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Obtain NPC">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="obtainNpcField" prefWidth="150.0" />
+                                          <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="Exp">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="expField" layoutX="38.0" layoutY="10.0" prefWidth="150.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="135.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Return NPC">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="returnNpcField" prefWidth="150.0" />
+                                          <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="Money">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="moneyField" layoutX="38.0" layoutY="10.0" prefWidth="150.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="170.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Min/max lvl">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="minLevelField" prefWidth="60.0" />
+                                          <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefWidth="30.0" text="/">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="maxLevelField" layoutX="110.0" layoutY="10.0" prefWidth="60.0" />
+                                          <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="Completion time">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="completionTimeField" layoutX="38.0" layoutY="10.0" prefWidth="150.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="195.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Rec lvl">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="recLevelField" prefWidth="150.0" />
+                                          <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="Entry fee">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="entryFeeField" layoutX="38.0" layoutY="10.0" prefWidth="150.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Player Class">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="playerClassField" prefWidth="150.0" />
+                                          <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="Time limit">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="mainTimeLimitField" layoutX="110.0" layoutY="10.0" prefWidth="150.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="BOTTOM_RIGHT" prefHeight="531.0" prefWidth="569.0">
+                                 <children>
+                                    <TitledPane alignment="CENTER" collapsible="false" maxWidth="250.0" prefHeight="356.0" prefWidth="250.0" text="Quest flags">
+                                       <content>
+                                          <VBox prefHeight="269.0" prefWidth="248.0">
+                                             <children>
+                                                <CheckBox fx:id="disableCheck" mnemonicParsing="false" text="Disabled">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="iterationCheck" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="Iteration quest">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="partyCheck" layoutX="20.0" layoutY="37.0" mnemonicParsing="false" text="Party quest">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="guildCheck" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="Guild creation quest">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="soloCheck" layoutX="20.0" layoutY="37.0" mnemonicParsing="false" text="Solo quest">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="mainqCheck" layoutX="20.0" layoutY="54.0" mnemonicParsing="false" text="Main quest">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="gMasterCheck" layoutX="20.0" layoutY="88.0" mnemonicParsing="false" text="Guild master quest">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="partyShareCheck" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" text="Party share quest">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="bossQuestCheck" layoutX="20.0" layoutY="209.0" mnemonicParsing="false" text="Boss quest">
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="expTableCheck" layoutX="20.0" layoutY="174.0" mnemonicParsing="false" text="Use exp table">
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="moneyTableCheck" layoutX="20.0" layoutY="196.0" mnemonicParsing="false" text="Use money table">
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <CheckBox fx:id="interconnectCheck" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="Interconnect quest">
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="guildQuestBox" layoutX="20.0" layoutY="240.0" mnemonicParsing="false" text="Guild quest">
+                                                   <padding>
+                                                      <Insets top="4.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </TitledPane>
+                                    <TitledPane collapsible="false" maxWidth="250.0" prefHeight="121.0" prefWidth="250.0" text="Change job">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <CheckBox fx:id="jobCheck" mnemonicParsing="false" text="Change job quest" />
+                                                <Label text="Change job type:">
+                                                   <padding>
+                                                      <Insets right="5.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="jobTypeField" prefHeight="25.0" prefWidth="174.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin></TextField>
+                                                <HBox>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </TitledPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="titleTab" text="Title">
+                     <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="410.0" prefWidth="424.0">
+                                 <children>
+                                    <TitledPane collapsible="false" prefHeight="419.0" prefWidth="424.0" text="Title Info">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Label prefWidth="70.0" text="Title ID" />
+                                                      <TextField fx:id="titleIdField" prefHeight="25.0" prefWidth="122.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="20.0" layoutY="20.0">
+                                                   <children>
+                                                      <Label prefWidth="70.0" text="Title name" />
+                                                      <TextField fx:id="titleNameField" prefHeight="26.0" prefWidth="243.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <Button fx:id="achieveBinBtn" mnemonicParsing="false" text="Edit achieve.bin" />
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TitledPane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="410.0" prefWidth="489.0">
+                                 <children>
+                                    <HBox maxWidth="0.0" prefHeight="20.0" prefWidth="4.0" />
+                                    <TitledPane collapsible="false" prefHeight="321.0" prefWidth="488.0" text="Title Stats">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <content>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="85.0" prefWidth="200.0" />
+                                                <TableView fx:id="titleOptionTable" prefHeight="225.0" prefWidth="486.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="titleStatNameCol" prefWidth="187.0" text="Stat Name" />
+                                                      <TableColumn fx:id="titleStatCol" prefWidth="93.0" text="Stat_Code" />
+                                                      <TableColumn fx:id="titleValCol" prefWidth="184.0" text="Value" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane collapsible="false" prefHeight="210.0" prefWidth="488.0" text="Add new stat">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox prefHeight="54.0" prefWidth="466.0">
+                                                   <children>
+                                                      <Label prefWidth="80.0" text="Type" />
+                                                      <ComboBox fx:id="titleOptionTypeAddBox" prefWidth="150.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label prefWidth="80.0" text="Value" />
+                                                      <TextField fx:id="titleOptionValAddField" prefWidth="150.0" />
+                                                      <Button fx:id="titleAddOptionBtn" mnemonicParsing="false" text="Add option">
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="titleRemoveOptionBtn" layoutX="260.0" layoutY="10.0" mnemonicParsing="false" text="Remove Option">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </TitledPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </Tab>
+                <Tab text="Rewards">
+                     <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="410.0" prefWidth="424.0">
+                                 <children>
+                                    <TitledPane collapsible="false" prefHeight="419.0" prefWidth="424.0" text="Reward items">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Label prefWidth="70.0" text="Choices" />
+                                                      <TextField fx:id="choiceNumField" prefHeight="25.0" prefWidth="50.0" />
+                                                      <Button fx:id="addRewardBtn" mnemonicParsing="false" prefWidth="120.0" text="ADD REWARD">
+                                                         <HBox.margin>
+                                                            <Insets left="30.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="removeRewardBtn" layoutX="318.0" layoutY="10.0" mnemonicParsing="false" prefWidth="120.0" text="REMOVE REWARD">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <TableView fx:id="rewardTable" prefHeight="373.0" prefWidth="402.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="typeColumn" prefWidth="118.0" text="Type" />
+                                                    <TableColumn fx:id="qtyColumn" prefWidth="71.0" text="Qty" />
+                                                      <TableColumn fx:id="rewardLvlColumn" prefWidth="95.0" text="Reward Lvl" />
+                                                      <TableColumn fx:id="checkColumn" prefWidth="117.0" text="Random opts" />
+                                                  </columns>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </TableView>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TitledPane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="410.0" prefWidth="489.0">
+                                 <children>
+                                    <HBox maxWidth="0.0" prefHeight="20.0" prefWidth="4.0" />
+                                    <TitledPane collapsible="false" prefHeight="321.0" prefWidth="488.0" text="Selected item stats">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <content>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="85.0" prefWidth="200.0" />
+                                                <TableView fx:id="optionTable" prefHeight="225.0" prefWidth="486.0">
+                                                  <columns>
+                                                      <TableColumn fx:id="statNameCol" prefWidth="187.0" text="Stat Name" />
+                                                    <TableColumn fx:id="statColumn" prefWidth="93.0" text="Stat_Code" />
+                                                    <TableColumn fx:id="valueColumn" prefWidth="184.0" text="Value" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane collapsible="false" prefHeight="210.0" prefWidth="488.0" text="Add new stat">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox prefHeight="54.0" prefWidth="466.0">
+                                                   <children>
+                                                      <Label prefWidth="80.0" text="Type" />
+                                                      <ComboBox fx:id="optionTypeField" prefWidth="150.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label prefWidth="80.0" text="Value" />
+                                                      <TextField fx:id="optionValueField" prefWidth="150.0" />
+                                                      <Button fx:id="addOptionBtn" mnemonicParsing="false" text="Add option">
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="removeOptionBtn" layoutX="260.0" layoutY="10.0" mnemonicParsing="false" text="Remove Option">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content></TitledPane>
+                                 </children></VBox>
+                           </children>
+                        </HBox>
+                     </content></Tab>
+                  <Tab text="Required items and dialogs">
+                     <content>
+                        <VBox>
+                           <children>
+                              <HBox prefHeight="65.0" prefWidth="910.0">
+                                 <children>
+                                    <Button fx:id="addStartingItemBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" text="ADD ITEM" textAlignment="CENTER" wrapText="true">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="removeStartingItemBtn" alignment="CENTER" layoutX="15.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" text="REMOVE ITEM" textAlignment="CENTER" wrapText="true">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="addQuestTextBtn" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" text="ADD DIALOG">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="removeQuestTextBtn" layoutX="285.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" text="REMOVE DIALOG">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="353.0" prefWidth="910.0">
+                                 <children>
+                                    <VBox prefHeight="400.0" prefWidth="250.0">
+                                       <children>
+                                          <TitledPane alignment="CENTER" collapsible="false" prefHeight="400.0" prefWidth="287.0" text="Required Items">
+                                             <content>
+                                                <TableView fx:id="startingItemsTable" prefHeight="200.0" prefWidth="250.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="startingTypeColumn" prefWidth="75.0" text="Type" />
+                                                    <TableColumn fx:id="startingQuantityColumn" prefWidth="175.0" text="Quantity" />
+                                                  </columns>
+                                                </TableView>
+                                             </content>
+                                          </TitledPane>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="400.0" prefWidth="250.0">
+                                       <children>
+                                          <TitledPane alignment="CENTER" collapsible="false" prefHeight="400.0" prefWidth="251.0" text="Quest texts">
+                                             <content>
+                                                <TableView fx:id="dlgTable" prefHeight="374.0" prefWidth="239.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="dlgStateColumn" prefWidth="75.0" text="State" />
+                                                    <TableColumn fx:id="dlgColumn" prefWidth="175.0" text="Quest text" />
+                                                  </columns>
+                                                </TableView>
+                                             </content>
+                                          </TitledPane>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <AnchorPane prefHeight="339.0" prefWidth="355.0">
+                                       <children>
+                                          <Label layoutX="70.0" layoutY="55.0" text="Dialog States:" />
+                                          <VBox layoutX="78.0" layoutY="83.0">
+                                             <children>
+                                                <Label text="0 - start" />
+                                                <Label text="1 - Agree" />
+                                                <Label text="2 - Decline" />
+                                                <Label layoutX="10.0" layoutY="44.0" text="3 - Re" />
+                                                <Label layoutX="10.0" layoutY="61.0" text="7 - End" />
+                                                <Label layoutX="10.0" layoutY="78.0" text="8 - Summary" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Tasks">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox prefHeight="92.0" prefWidth="900.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Task">
+                                       <HBox.margin>
+                                          <Insets top="35.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets right="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <ComboBox fx:id="taskBox" prefHeight="25.0" prefWidth="357.0">
+                                       <HBox.margin>
+                                          <Insets top="35.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <Button fx:id="newTaskBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="NEW TASK">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="35.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="removeTaskBtn" layoutX="477.0" layoutY="45.0" mnemonicParsing="false" text="REMOVE TASK">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="35.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="saveTaskBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="163.0" text="Save current task data">
+                                       <HBox.margin>
+                                          <Insets left="50.0" top="25.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <TabPane fx:id="subQuestTabPane" prefHeight="301.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab fx:id="generalTab" text="General">
+                                       <content>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox prefHeight="272.0" prefWidth="414.0">
+                                                   <children>
+                                                      <HBox>
+                                                         <children>
+                                                            <Label alignment="CENTER_RIGHT" prefWidth="110.0" text="Sub QuestID">
+                                                               <padding>
+                                                                  <Insets right="5.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <TextField fx:id="subQuestIdField" prefHeight="26.0" prefWidth="50.0" />
+                                                            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="120.0" text="Next Sub QuestID">
+                                                               <padding>
+                                                                  <Insets right="5.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <TextField fx:id="nextSubQuestIdField" prefHeight="26.0" prefWidth="106.0" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets top="20.0" />
+                                                         </padding>
+                                                      </HBox>
+                                                      <HBox>
+                                                         <children>
+                                                            <Label alignment="CENTER_RIGHT" prefWidth="110.0" text="Name">
+                                                               <padding>
+                                                                  <Insets right="5.0" />
+                                                               </padding>
+                                                            </Label>
+                                                            <TextField fx:id="subQuestName" prefHeight="25.0" prefWidth="277.0" />
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets top="10.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox layoutX="10.0" layoutY="10.0">
+                                                         <children>
+                                                            <Label alignment="CENTER_RIGHT" prefWidth="110.0" text="Type">
+                                                               <padding>
+                                                                  <Insets right="5.0" />
+                                                               </padding>
+                                                               <HBox.margin>
+                                                                  <Insets />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                            <ComboBox fx:id="subQuestType" disable="true" prefHeight="25.0" prefWidth="277.0" />
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets top="10.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <CheckBox fx:id="immediateCheck" mnemonicParsing="false" text="Immediate reward task">
+                                                               <VBox.margin>
+                                                                  <Insets left="110.0" top="10.0" />
+                                                               </VBox.margin>
+                                                            </CheckBox>
+                                                            <HBox>
+                                                               <children>
+                                                                  <Label alignment="CENTER_RIGHT" prefWidth="110.0" text="Immediate XP">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <TextField fx:id="immediateExpField" />
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="15.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox>
+                                                               <children>
+                                                                  <Label alignment="CENTER_RIGHT" prefWidth="110.0" text="Immediate Crones">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <TextField fx:id="immediateCronesField" />
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="127.0">
+                                                               <children>
+                                                                  <Label alignment="CENTER_RIGHT" prefWidth="110.0" text="Time limit">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <TextField fx:id="subTimeLimitField">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children></VBox>
+                                                <VBox prefHeight="272.0" prefWidth="502.0">
+                                                   <children>
+                                                      <AnchorPane prefHeight="334.0" prefWidth="502.0">
+                                                         <children>
+                                                            <ListView fx:id="previousSubQuestsListView" layoutX="38.0" layoutY="56.0" prefHeight="242.0" prefWidth="38.0" />
+                                                            <Label layoutX="43.0" layoutY="23.0" text="Required previous sub quest ids:" />
+                                                            <Label layoutX="87.0" layoutY="56.0" text="ID:" />
+                                                            <TextField fx:id="prevSubQuestIdField" layoutX="109.0" layoutY="52.0" prefHeight="26.0" prefWidth="28.0" />
+                                                            <Button fx:id="addReqPrevBtn" layoutX="155.0" layoutY="52.0" mnemonicParsing="false" text="Add" />
+                                                            <Button fx:id="delReqPrevBtn" layoutX="97.0" layoutY="245.0" mnemonicParsing="false" text="Delete selected" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children></VBox>
+                                             </children>
+                                          </HBox>
+                                       </content>
+                                    </Tab>
+                                  <Tab fx:id="talkingTab" text="Talking">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox prefHeight="40.0" prefWidth="897.0">
+                                                   <children>
+                                                      <Label prefWidth="70.0" text="Talk to npc">
+                                                         <padding>
+                                                            <Insets right="5.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <TextField fx:id="talkTaskNpcField" prefHeight="25.0" prefWidth="175.0">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Button fx:id="addReturnItemBtn" mnemonicParsing="false" prefWidth="145.0" text="ADD RETURN ITEM">
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="removeReturnItemBtn" layoutX="280.0" layoutY="20.0" mnemonicParsing="false" prefWidth="145.0" text="REMOVE RTN ITEM">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="addTakeItemBtn" mnemonicParsing="false" prefWidth="145.0" text="ADD TAKE ITEM">
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Button fx:id="removeTakeItemBtn" layoutX="600.0" layoutY="20.0" mnemonicParsing="false" prefWidth="145.0" text="REMOVE TAKE ITEM">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="5.0" top="10.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox prefHeight="234.0" prefWidth="900.0">
+                                                   <children>
+                                                      <TitledPane alignment="CENTER" collapsible="false" prefHeight="233.0" prefWidth="250.0" text="Talking file">
+                                                         <content>
+                                                            <VBox prefHeight="240.0" prefWidth="250.0">
+                                                               <children>
+                                                                  <HBox prefHeight="55.0" prefWidth="272.0">
+                                                                     <children>
+                                                                        <Label prefWidth="70.0" text="File 1">
+                                                                           <padding>
+                                                                              <Insets right="5.0" />
+                                                                           </padding>
+                                                                        </Label>
+                                                                        <TextField fx:id="talk1Field" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <VBox.margin>
+                                                                        <Insets top="10.0" />
+                                                                     </VBox.margin>
+                                                                     <padding>
+                                                                        <Insets left="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="272.0">
+                                                                     <children>
+                                                                        <Label prefWidth="70.0" text="File 2">
+                                                                           <padding>
+                                                                              <Insets right="5.0" />
+                                                                           </padding>
+                                                                        </Label>
+                                                                        <TextField fx:id="talk2Field" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets left="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                         </content>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </TitledPane>
+                                                      <VBox prefHeight="227.0" prefWidth="300.0">
+                                                         <children>
+                                                            <TitledPane alignment="CENTER" collapsible="false" prefWidth="300.0" text="Return items">
+                                                               <content>
+                                                                  <TableView fx:id="returnItemTable" maxWidth="300.0" prefHeight="236.0" prefWidth="300.0">
+                                                                    <columns>
+                                                                      <TableColumn fx:id="returnItemTypeColumn" prefWidth="150.0" text="Type" />
+                                                                      <TableColumn fx:id="returnItemQuantityColumn" prefWidth="148.0" text="Quantity" />
+                                                                    </columns>
+                                                                  </TableView>
+                                                               </content>
+                                                            </TitledPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox prefHeight="182.0" prefWidth="300.0">
+                                                         <children>
+                                                            <TitledPane alignment="CENTER" collapsible="false" prefHeight="233.0" prefWidth="302.0" text="Take items">
+                                                               <content>
+                                                                  <TableView fx:id="takeItemTable" prefHeight="207.0" prefWidth="298.0">
+                                                                     <columns>
+                                                                        <TableColumn fx:id="takeItemTypeColumn" prefWidth="150.0" text="Type" />
+                                                                        <TableColumn fx:id="takeItemQuantityColumn" prefWidth="158.0" text="Quantity" />
+                                                                     </columns>
+                                                                  </TableView>
+                                                               </content>
+                                                            </TitledPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content></Tab>
+                                    <Tab fx:id="collectingTab" text="Collecting">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox prefHeight="288.0" prefWidth="890.0">
+                                                   <children>
+                                                      <TableView fx:id="collectTable" prefHeight="262.0" prefWidth="190.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="dropChanceColumn" prefWidth="49.0" text="Drop %" />
+                                                            <TableColumn fx:id="getFromColumn" prefWidth="140.0" text="Get-from list" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <VBox prefHeight="262.0" prefWidth="700.0">
+                                                         <children>
+                                                            <HBox prefHeight="40.0" prefWidth="660.0">
+                                                               <children>
+                                                                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text=" Item quantity">
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <TextField fx:id="collectQtyField" prefHeight="25.0" prefWidth="102.0" />
+                                                                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Needed item ID">
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </Label>
+                                                                  <TextField fx:id="collectIdField" prefHeight="25.0" prefWidth="100.0" />
+                                                                  <CheckBox fx:id="collectFromMonsterBox" mnemonicParsing="false" text="Kill monster">
+                                                                     <HBox.margin>
+                                                                        <Insets left="30.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="20.0" prefHeight="40.0" prefWidth="660.0">
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <AnchorPane prefHeight="172.0" prefWidth="700.0">
+                                                               <children>
+                                                                  <Button fx:id="addCollectDropListBtn" layoutX="307.0" layoutY="74.0" mnemonicParsing="false" prefWidth="120.0" text="Add  new drop list" />
+                                                                  <Button fx:id="removeCollectDropListBtn" layoutX="307.0" layoutY="111.0" mnemonicParsing="false" prefWidth="120.0" text="Remove drop list" />
+                                                                  <Button fx:id="delIdFromListBtn" layoutX="105.0" layoutY="111.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="145.0" text="Delete last item from selected list" textAlignment="CENTER" wrapText="true" />
+                                                                  <Button fx:id="addIDtoListBtn" layoutX="105.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="Add ID to selected list" />
+                                                                  <TextField fx:id="listIdPutField" layoutX="103.0" layoutY="32.0" prefHeight="25.0" prefWidth="145.0" />
+                                                                  <Label layoutX="14.0" layoutY="36.0" text="Monster/Box ID">
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="killingTab" text="Killing">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox prefHeight="288.0" prefWidth="890.0">
+                                                   <children>
+                                                      <TableView fx:id="monsterKillTable" prefHeight="262.0" prefWidth="190.0">
+                                                        <columns>
+                                                          <TableColumn prefWidth="49.0" text="#" />
+                                                          <TableColumn fx:id="monsterIdColumn" prefWidth="140.0" text="Monster ID" />
+                                                        </columns>
+                                                      </TableView>
+                                                      <VBox prefHeight="262.0" prefWidth="700.0">
+                                                         <children>
+                                                            <HBox prefHeight="40.0" prefWidth="660.0">
+                                                               <children>
+                                                                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Kill count">
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <TextField fx:id="killCountField" prefHeight="25.0" prefWidth="102.0" />
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="20.0" prefHeight="40.0" prefWidth="660.0">
+                                                               <children>
+                                                                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Player minimum level">
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <TextField fx:id="playerMinLevelField" prefHeight="25.0" prefWidth="102.0" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="60.0" prefHeight="40.0" prefWidth="660.0">
+                                                               <children>
+                                                                  <Label alignment="CENTER_RIGHT" prefWidth="120.0" text="Required weapon">
+                                                                     <padding>
+                                                                        <Insets right="5.0" />
+                                                                     </padding>
+                                                                  </Label>
+                                                                  <TextField fx:id="requiredWpnField" prefHeight="25.0" prefWidth="102.0" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="100.0" prefHeight="40.0" prefWidth="660.0">
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                               <children>
+                                                                  <CheckBox fx:id="killMonsterBox" mnemonicParsing="false" text="Kill monster">
+                                                                     <HBox.margin>
+                                                                        <Insets left="120.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Button fx:id="addMonsterKillBtn" mnemonicParsing="false" prefWidth="120.0" text="Add monster">
+                                                                     <HBox.margin>
+                                                                        <Insets left="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="removeMonsterKillBtn" mnemonicParsing="false" prefWidth="120.0" text="Remove Monster">
+                                                                     <HBox.margin>
+                                                                        <Insets left="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="specialTab" text="Special">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Label prefWidth="80.0" text="Type:" />
+                                                      <Label prefWidth="80.0" text="param1:">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="90.0" layoutY="10.0" prefWidth="80.0" text="param2:">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="150.0" layoutY="10.0" prefWidth="80.0" text="param3:">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="210.0" layoutY="10.0" prefWidth="80.0" text="param4:">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="270.0" layoutY="10.0" prefWidth="80.0" text="param5:">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="60.0" top="20.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <TextField fx:id="subSpecialTypeField" prefHeight="25.0" prefWidth="80.0" />
+                                                      <TextField fx:id="subParam1Field" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="subParam2Field" layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="subParam3Field" layoutX="170.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="subParam4Field" layoutX="250.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="subParam5Field" layoutX="330.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                                         <HBox.margin>
+                                                            <Insets left="50.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox prefHeight="121.0" prefWidth="900.0">
+                                                   <children>
+                                                      <VBox>
+                                                         <children>
+                                                            <Label text="Type &quot;101&quot; is gain normal item, white one (not from itemquest.bin) with  two params:" />
+                                                            <Label layoutX="10.0" layoutY="10.0" text="- param1: ID of the item.">
+                                                               <VBox.margin>
+                                                                  <Insets left="30.0" />
+                                                               </VBox.margin></Label>
+                                                            <Label layoutX="10.0" layoutY="27.0" text="- param2: the item count.">
+                                                               <VBox.margin>
+                                                                  <Insets left="30.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label layoutX="10.0" layoutY="10.0" text="Type &quot;127&quot;  is  min guild member count with one parameter." />
+                                                            <Label layoutX="40.0" layoutY="27.0" text="- param1: min member count.;">
+                                                               <VBox.margin>
+                                                                  <Insets left="30.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="movementTab" text="Movement">
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox prefHeight="288.0" prefWidth="890.0">
+                                                   <children>
+                                                      <TableView fx:id="movementTable" prefHeight="262.0" prefWidth="190.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="regionColumn" prefWidth="92.00001507997513" text="ui Region" />
+                                                            <TableColumn fx:id="roomColumn" prefWidth="97.59997940063477" text="ui Room" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <VBox prefHeight="262.0" prefWidth="700.0">
+                                                         <children>
+                                                            <HBox layoutX="10.0" layoutY="20.0" prefHeight="40.0" prefWidth="660.0">
+                                                               <padding>
+                                                                  <Insets left="10.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <AnchorPane prefHeight="172.0" prefWidth="700.0">
+                                                               <children>
+                                                                  <Button fx:id="delMovementEntryBtn" layoutX="105.0" layoutY="111.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="145.0" text="Remove Entry" textAlignment="CENTER" wrapText="true" />
+                                                                  <Button fx:id="addMovementEntryBtn" layoutX="105.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="Add Entry" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Specials">
+                     <content>
+                        <AnchorPane prefHeight="354.0" prefWidth="910.0">
+                           <children>
+                              <HBox layoutX="55.0" layoutY="197.0" prefHeight="17.0" prefWidth="770.0">
+                                 <children>
+                                    <Label prefWidth="80.0" text="Reward type:" />
+                                    <Label prefWidth="80.0" text="param1:">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label layoutX="90.0" layoutY="10.0" prefWidth="80.0" text="param2:">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label layoutX="150.0" layoutY="10.0" prefWidth="80.0" text="param3:">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label layoutX="210.0" layoutY="10.0" prefWidth="80.0" text="param4:">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label layoutX="270.0" layoutY="10.0" prefWidth="80.0" text="param5:">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="55.0" layoutY="228.0">
+                                 <children>
+                                    <TextField fx:id="specialRwrdTypeField" prefHeight="25.0" prefWidth="80.0" />
+                                    <TextField fx:id="specialParam1Field" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="specialParam2Field" layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="specialParam3Field" layoutX="170.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="specialParam4Field" layoutX="250.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="specialParam5Field" layoutX="330.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="specialConditionTable" layoutX="55.0" layoutY="37.0" prefHeight="133.0" prefWidth="483.0">
+                                <columns>
+                                  <TableColumn fx:id="conditionTypeCol" prefWidth="104.0" text="Condition Type" />
+                                  <TableColumn fx:id="param1Col" prefWidth="77.0" text="param1" />
+                                    <TableColumn fx:id="param2Col" prefWidth="77.0" text="param2" />
+                                    <TableColumn fx:id="param3Col" prefWidth="77.0" text="param3" />
+                                    <TableColumn fx:id="param4Col" prefWidth="77.0" text="param4" />
+                                    <TableColumn fx:id="param5Col" prefWidth="77.0" text="param5" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="addConditionBtn" layoutX="572.0" layoutY="63.0" mnemonicParsing="false" prefWidth="110.0" text="ADD CONDITION" />
+                              <Button fx:id="delConditionBtn" layoutX="572.0" layoutY="104.0" mnemonicParsing="false" prefWidth="110.0" text="DEL CONDITION" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                 <fx:include fx:id="ladderView" source="ladderview.fxml" />
+                 <fx:include fx:id="etcView" source="etcview.fxml" />
+
+                  <Tab text="Search Tool">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="filteredTable" layoutX="127.0" layoutY="34.0" prefHeight="240.0" prefWidth="420.0">
+                                <columns>
+                                  <TableColumn fx:id="filterQuestIdCol" prefWidth="61.0" text="ID" />
+                                  <TableColumn fx:id="filterQuestNameCol" prefWidth="359.0" text="Name" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="inputField" layoutX="127.0" layoutY="274.0" prefHeight="25.0" prefWidth="420.0" />
+                              <RadioButton fx:id="nameRadio" layoutX="128.0" layoutY="308.0" mnemonicParsing="false" selected="true" text="Quest Name">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grp1" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="startNpcRadio" layoutX="128.0" layoutY="325.0" mnemonicParsing="false" text="Start NPC" toggleGroup="$grp1">
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </RadioButton>
+                              <RadioButton fx:id="rewardNpcRadio" layoutX="128.0" layoutY="342.0" mnemonicParsing="false" text="Reward NPC" toggleGroup="$grp1">
+                                 <padding>
+                                    <Insets top="6.0" />
+                                 </padding>
+                              </RadioButton>
+                              <Label layoutX="586.0" layoutY="34.0" text="Flags:" />
+                              <RadioButton fx:id="soloRadio" layoutX="586.0" layoutY="51.0" mnemonicParsing="false" text="Solo">
+                                 <padding>
+                                    <Insets top="2.0" />
+                                 </padding>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grp2" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="notifyRadio" layoutX="586.0" layoutY="68.0" mnemonicParsing="false" text="Notify" toggleGroup="$grp2">
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding></RadioButton>
+                              <RadioButton fx:id="iterationRadio" layoutX="586.0" layoutY="85.0" mnemonicParsing="false" text="Iteration" toggleGroup="$grp2">
+                                 <padding>
+                                    <Insets top="8.0" />
+                                 </padding></RadioButton>
+                              <RadioButton fx:id="disabledRadio" layoutX="586.0" layoutY="104.0" mnemonicParsing="false" text="Disabled" toggleGroup="$grp2">
+                                 <padding>
+                                    <Insets top="8.0" />
+                                 </padding>
+                              </RadioButton>
+                              <RadioButton fx:id="guildMasterRadio" layoutX="586.0" layoutY="129.0" mnemonicParsing="false" text="Guild master" toggleGroup="$grp2">
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </RadioButton>
+                              <RadioButton fx:id="allRadio" layoutX="586.0" layoutY="149.0" mnemonicParsing="false" text="All" toggleGroup="$grp2">
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </RadioButton>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+      <ToolBar prefHeight="60.0" prefWidth="939.0">
+        <items>
+          <Button fx:id="newQuestBtn" mnemonicParsing="false" text="New quest" />
+            <Button fx:id="removeQuestBtn" mnemonicParsing="false" text="Remove quest" />
+            <Button fx:id="saveFileBtn" mnemonicParsing="false" text="Save File" />
+            <Button fx:id="saveEditsBtn" mnemonicParsing="false" text="Save Edits" />
+            <Button fx:id="cloneQuestBtn" layoutX="249.0" layoutY="10.0" mnemonicParsing="false" text="Clone" />
+            <Button fx:id="disableQuestsBtn" layoutX="323.0" layoutY="10.0" mnemonicParsing="false" text="Disable/Enable all" />
+            <Label fx:id="fadeLabel" prefHeight="17.0" prefWidth="145.0">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+        </items>
+      </ToolBar>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

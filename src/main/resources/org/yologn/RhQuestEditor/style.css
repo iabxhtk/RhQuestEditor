@@ -1,0 +1,214 @@
+.button{
+-fx-background-color: rgba(30,30,30,0.8);
+-fx-text-fill: white;
+-fx-background-radius: 6px;
+-fx-background-insets: 0px;
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+-fx-font-size: 0.87em;
+}
+.button:hover{
+-fx-background-color: rgba(30,30,30,0.4);
+-fx-text-fill: white;
+-fx-background-radius: 6px;
+-fx-background-insets: 0px;
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+-fx-font-size: 0.87em;
+}
+.table:empty {
+    -fx-background-color: lightyellow;
+}
+#borderpaane{
+ -fx-background-color: rgba(55,55,55,1);
+
+ -fx-background-radius: 6px;
+ -fx-background-insets: 0px;
+ -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+ -fx-font-size: 0.87em;
+ }
+.label{
+    -fx-text-fill: white;
+}
+.text-field{
+    -fx-text-fill: white;
+    -fx-background-color: rgba(42,42,42,1);
+    -fx-background-radius: 6px;
+     -fx-background-insets: 0px;
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+}
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, derive(-fx-color, -20%);
+    -fx-effect: innershadow(two-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0 , 0);
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+    -fx-background-color: -fx-outer-border, -fx-inner-border, derive(-fx-color, -20%);
+        -fx-effect: innershadow(two-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0 , 0);
+
+}
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #96b946;
+}
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+ /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+    -fx-padding: 0.416667em  0.0em  0.0em 1em; /* overriden as 5 2 0 0 */
+}
+.tab .label{
+-fx-text-fill: white;
+}
+.tab .tab-label
+{
+-fx-skin: "com.sun.javafx.scene.control.skin.LabelSkin";
+-fx-alignment: CENTER;
+-fx-text-fill: white;
+}
+.tab {
+-fx-background-color: rgba(38,38,38,1);
+    -fx-text-fill: white;
+           -fx-background-radius: 8px,8px,0px,0px;
+            -fx-background-insets: 0px;
+            -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+
+}
+.combo-box{
+    -fx-text-fill: white;
+    -fx-background-color: rgba(38,38,38,1);
+    -fx-background-radius: 6px;
+     -fx-background-insets: 0px;
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+}
+.combo-box > .list-cell {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+}
+
+
+.table-view{
+   -fx-background-color: rgba(38,38,38,1);
+
+   fx-background-radius: 8px,8px,0px,0px;
+               -fx-background-insets: 0px;
+               -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+}
+
+.table-view:focused{
+    -fx-background-color: rgba(42,42,42,1);
+    fx-background-radius: 8px,8px,0px,0px;
+                -fx-background-insets: 0px;
+                -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+}
+
+
+.table-view .column-header-background{
+    -fx-background-color: rgba(38,38,38,1);
+    -fx-text-fill: white;
+           -fx-background-radius: 8px,8px,0px,0px;
+            -fx-background-insets: 0px;
+            -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color:rgba(80,80,80,1), rgba(55,55,55,1) ;
+    -fx-table-cell-border-color:rgba(80,80,80,1);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: rgba(80,80,80,1), rgba(42,42,42,1);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+.table .empty-table
+ {
+    -fx-background-color: white;
+    -fx-font-size: 1.166667em; /* 14pt - 2 more than the default font */
+}
+
+
+
+
+
+.radio-button{
+    -fx-text-fill: white;
+
+}
+.check-box{
+    -fx-text-fill: white;
+}
+.titled-pane {
+   -fx-text-fill: white;
+   -fx-background-radius: 8px,8px,0px,0px;
+    -fx-background-insets: 0px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+}
+.tool-bar {
+-fx-background-color: rgba(55,55,55,1);
+   -fx-text-fill: white;
+   -fx-background-radius: 8px,8px,0px,0px;
+    -fx-background-insets: 0px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+    -fx-box-border,linear-gradient(to bottom, derive(-fx-color,-02%), derive(-fx-color,65%) 12%,      derive(-fx-color,23%) 88%, derive(-fx-color,50%) 99%, -fx-box-border);
+}
+.titled-pane > .title
+{
+-fx-background-color:rgba(38,38,38,1);
+
+-fx-background-insets: 0, 1, 2;
+-fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+-fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+}
+.titled-pane > *.content
+{
+
+-fx-background-color: rgba(55,55,55,1);
+-fx-box-border,linear-gradient(to bottom, derive(-fx-color,-02%), derive(-fx-color,65%) 12%,      derive(-fx-color,23%) 88%, derive(-fx-color,50%) 99%, -fx-box-border);
+-fx-border-color: rgba(38,38,38,1);
+-fx-background-insets: 0, 0 1 1 1;
+-fx-padding: 0.167em;
+ }
+ .context-menu {
+
+   -fx-text-fill: black;
+ }
+
+ .menu-item .label {
+   -fx-text-fill: black;
+ }
+
+ .menu-item:focused .label {
+   -fx-text-fill: black;
+ }

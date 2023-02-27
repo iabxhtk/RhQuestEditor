@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.yologn.RhQuestEditor.AchieveEditor.AchieveWindow">
+   <children>
+      <TableView fx:id="achieveTable" layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="230.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.20001220703125" text="ID" />
+          <TableColumn fx:id="nameCol" prefWidth="152.79998779296875" text="Title" />
+        </columns>
+      </TableView>
+      <VBox layoutX="272.0" layoutY="14.0" prefHeight="370.0" prefWidth="352.0">
+         <children>
+            <HBox prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="ID">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="idField" prefHeight="26.0" prefWidth="54.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Unique Name">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="uniqueNameField" prefHeight="26.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="48.0" prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Name">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="koreanNameField" prefHeight="26.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Icon Name">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="iconNameField" prefHeight="26.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="AchieveType">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="achieveType" prefHeight="26.0" prefWidth="50.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="95.0" text="useOptionCount" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="useOptionCountField" layoutX="110.0" layoutY="10.0" prefHeight="26.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="123.0" prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Opt1">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="opt1Box" prefWidth="150.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="18.0" prefWidth="40.0" text="Val" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="opt1ValField" layoutX="110.0" layoutY="10.0" prefHeight="26.0" prefWidth="50.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="180.0" prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Opt1">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="opt2Box" prefWidth="150.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="40.0" text="Val" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="opt2ValField" layoutX="110.0" layoutY="10.0" prefHeight="26.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="218.0" prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Opt1">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="opt3Box" prefWidth="150.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="40.0" text="Val" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="opt3ValField" layoutX="110.0" layoutY="10.0" prefHeight="26.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="256.0" prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Opt1">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="opt4Box" prefWidth="150.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="40.0" text="Val" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="opt4ValField" layoutX="110.0" layoutY="10.0" prefHeight="26.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="293.0" prefHeight="37.0" prefWidth="316.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Opt1">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="opt5Box" prefWidth="150.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefWidth="40.0" text="Val" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="opt5ValField" layoutX="110.0" layoutY="10.0" prefHeight="26.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="cloneTitleBtn" layoutX="701.0" layoutY="36.0" mnemonicParsing="false" prefWidth="80.0" text="Clone" />
+      <Button fx:id="saveEditsBtn" layoutX="699.0" layoutY="72.0" mnemonicParsing="false" prefWidth="80.0" text="Save edits" />
+      <Button fx:id="saveFileBtn" layoutX="699.0" layoutY="114.0" mnemonicParsing="false" prefWidth="80.0" text="Save File" />
+      <Label fx:id="logLabel" layoutX="699.0" layoutY="167.0" prefHeight="18.0" prefWidth="86.0" />
+      <Label layoutX="709.0" layoutY="177.0" prefHeight="18.0" prefWidth="86.0" />
+   </children>
+</AnchorPane>
