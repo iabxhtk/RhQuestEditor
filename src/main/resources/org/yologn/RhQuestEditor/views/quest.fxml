@@ -215,6 +215,62 @@
                                           <Insets top="10.0" />
                                        </VBox.margin>
                                     </HBox>
+                                    <HBox layoutX="10.0" layoutY="331.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="Player Class">
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="playerClassField2" prefWidth="150.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="317.0">
+                                       <children>
+                                          <CheckBox fx:id="dailyCheckBox" mnemonicParsing="false" prefWidth="100.0" text="Daily">
+                                             <HBox.margin>
+                                                <Insets left="100.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <CheckBox fx:id="weeklyCheckBox" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" prefWidth="100.0" text="Weekly" />
+                                          <CheckBox fx:id="monthlyCheckBox" layoutX="210.0" layoutY="10.0" mnemonicParsing="false" prefWidth="100.0" text="Monthly" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="387.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label prefWidth="100.0" text="          Mission start" />
+                                          <DatePicker fx:id="missionStartDatePicker" />
+                                          <Label layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="          Mission end" />
+                                          <DatePicker fx:id="missionEndDatePicker" layoutX="110.0" layoutY="10.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="405.0">
+                                       <children>
+                                          <CheckBox fx:id="missMonCheckBox" mnemonicParsing="false" prefWidth="60.0" text="MON">
+                                             <HBox.margin>
+                                                <Insets left="100.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <CheckBox fx:id="missTueCheckBox" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" prefWidth="60.0" text="TUE" />
+                                          <CheckBox fx:id="missWedCheckBox" layoutX="210.0" layoutY="10.0" mnemonicParsing="false" prefWidth="60.0" text="WED" />
+                                          <CheckBox fx:id="missThuCheckBox" layoutX="230.0" layoutY="10.0" mnemonicParsing="false" prefWidth="60.0" text="THU" />
+                                          <CheckBox fx:id="missFriCheckBox" layoutX="290.0" layoutY="10.0" mnemonicParsing="false" prefWidth="60.0" text="FRI" />
+                                          <CheckBox fx:id="missSatCheckBox" layoutX="350.0" layoutY="10.0" mnemonicParsing="false" prefWidth="60.0" text="SAT" />
+                                          <CheckBox fx:id="missSunCheckBox" layoutX="410.0" layoutY="10.0" mnemonicParsing="false" prefWidth="60.0" text="SUN" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
                                  </children>
                               </VBox>
                               <VBox alignment="BOTTOM_RIGHT" prefHeight="531.0" prefWidth="569.0">

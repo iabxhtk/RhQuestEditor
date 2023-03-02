@@ -35,10 +35,13 @@ import org.yologn.RhQuestEditor.Util.EDITOR_TYPE;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.util.*;
 
 public class Controller implements Initializable {
@@ -60,6 +63,7 @@ public class Controller implements Initializable {
     public TextField recLevelField;
     public TextField entryFeeField;
     public TextField playerClassField;
+    public TextField playerClassField2;
     public TextField jobTypeField;
     public TextField choiceNumField;
 
@@ -178,6 +182,13 @@ public class Controller implements Initializable {
     public CheckBox interconnectCheck;
     public CheckBox guildQuestBox;
 
+    public CheckBox missMonCheckBox;
+    public CheckBox missTueCheckBox;
+    public CheckBox missWedCheckBox;
+    public CheckBox missThuCheckBox;
+    public CheckBox missFriCheckBox;
+    public CheckBox missSatCheckBox;
+    public CheckBox missSunCheckBox;
 
     public TableColumn checkColumn;
     public TableColumn<QItemData, Short> qtyColumn;
@@ -254,6 +265,16 @@ public class Controller implements Initializable {
     @FXML
     private Tab ladderView;
 
+    @FXML
+    public CheckBox dailyCheckBox;
+    @FXML
+    public CheckBox weeklyCheckBox;
+    @FXML
+    public CheckBox monthlyCheckBox;
+    @FXML
+    public DatePicker missionStartDatePicker;
+    @FXML
+    public DatePicker missionEndDatePicker;
 
     private EDITOR_TYPE editor_type = EDITOR_TYPE.NORMAL;
     private final QuestHeader questHeader = new QuestHeader();
@@ -281,11 +302,15 @@ public class Controller implements Initializable {
     }
 
     private void LoadQuests() throws IOException {
-        LoadAchieve();
+
 
         String path = "quest.bin";
         if (editor_type == EDITOR_TYPE.TITLE)
+        {
+            LoadAchieve();
             path = "questach.bin";
+        }
+
         DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(path)));
         QuestIO reader = new QuestIO(in);
 
@@ -761,6 +786,7 @@ public class Controller implements Initializable {
             newQuest.maxReqLevel = 120;
             newQuest.recommendedLevel = 1;
             newQuest.playerClass = -256;
+            newQuest.playerClass2 = -256;
             newQuest.parentQuestID = -1;
             newQuest.childQuestID = -1;
             newQuest.iTimeLimit = -1;
@@ -772,6 +798,7 @@ public class Controller implements Initializable {
             newQuest.m_InfoMsg3 = "";
             newQuest.m_LevelNoti = "";
             newQuest.m_LevelNoti2 = "";
+            newQuest.m_MissionWeek = "       ";
             itemsData.add(newQuest);
             ++questHeader.qsize;
             questBox.setItems(itemsData);
@@ -903,7 +930,8 @@ public class Controller implements Initializable {
             // entry fee
             selectedEntry.m_EntryFee = Integer.parseInt(entryFeeField.getText());
             // player class
-            selectedEntry.playerClass =  Integer.parseInt(playerClassField.getText());
+            selectedEntry.playerClass =  Short.parseShort(playerClassField.getText());
+            selectedEntry.playerClass2 =  Short.parseShort(playerClassField2.getText());
             // is quest disabled
             selectedEntry.disable = Util.boolToByte(disableCheck.isSelected());
             // is iteration quest
@@ -951,6 +979,22 @@ public class Controller implements Initializable {
             etcViewController.savePropsToEntry(selectedEntry);
             ladderViewController.savePropsToEntry(selectedEntry);
 
+            byte[] byteBuff = selectedEntry.m_MissionWeek.getBytes();
+            byteBuff[0] = Util.boolToByte(missMonCheckBox.isSelected());
+            byteBuff[1] = Util.boolToByte(missTueCheckBox.isSelected());
+            byteBuff[2] = Util.boolToByte(missWedCheckBox.isSelected());
+            byteBuff[3] = Util.boolToByte(missThuCheckBox.isSelected());
+            byteBuff[4] = Util.boolToByte(missFriCheckBox.isSelected());
+            byteBuff[5] = Util.boolToByte(missSatCheckBox.isSelected());
+            byteBuff[6] = Util.boolToByte(missSunCheckBox.isSelected());
+
+            selectedEntry.m_MissionWeek = new String(byteBuff, StandardCharsets.UTF_8);
+            selectedEntry.m_MissionStartDate.setDate(missionStartDatePicker.getValue());
+            selectedEntry.m_MissionEndDate.setDate(missionEndDatePicker.getValue());
+
+            selectedEntry.m_bDailyQuest = Util.boolToByte(dailyCheckBox.isSelected());
+            selectedEntry.m_bWeeklyQuest = Util.boolToByte(weeklyCheckBox.isSelected());
+            selectedEntry.m_bMonthlyQuest = Util.boolToByte(monthlyCheckBox.isSelected());
 
             playFadeMessage("Quest edits saved..", 2000);
 
@@ -1334,7 +1378,8 @@ public class Controller implements Initializable {
                 completionTimeField.setText(Integer.toString(newValue.iTimeLimit));
                 recLevelField.setText(Integer.toString(newValue.recommendedLevel));
                 entryFeeField.setText(Integer.toString(newValue.m_EntryFee));
-                playerClassField.setText(Integer.toString(newValue.playerClass));
+                playerClassField.setText(Short.toString(newValue.playerClass));
+                playerClassField2.setText(Short.toString(newValue.playerClass2));
                 disableCheck.setSelected(Util.byteToBool(newValue.disable));
                 iterationCheck.setSelected(Util.byteToBool(newValue.iterationQuest));
                 partyCheck.setSelected(Util.byteToBool(newValue.partyQuest));
@@ -1362,6 +1407,16 @@ public class Controller implements Initializable {
                 specialParam5Field.setText(Integer.toString(newValue.m_special_reward.param_5));
                 mainTimeLimitField.setText(Integer.toString(newValue.iTimeLimit));
 
+                dailyCheckBox.setSelected(Util.byteToBool(newValue.m_bDailyQuest));
+                weeklyCheckBox.setSelected(Util.byteToBool(newValue.m_bWeeklyQuest));
+                monthlyCheckBox.setSelected(Util.byteToBool(newValue.m_bMonthlyQuest));
+
+                try {
+                    missionStartDatePicker.setValue(LocalDate.of(newValue.m_MissionStartDate.wYear, newValue.m_MissionStartDate.wMonth + 1, newValue.m_MissionStartDate.wDay + 1));
+                    missionEndDatePicker.setValue(LocalDate.of(newValue.m_MissionEndDate.wYear, newValue.m_MissionEndDate.wMonth + 1, newValue.m_MissionEndDate.wDay + 1));
+                } catch (DateTimeException e) {
+                    e.printStackTrace();
+                }
 
                 ///Titlestuff
                 if (editor_type == EDITOR_TYPE.TITLE) {

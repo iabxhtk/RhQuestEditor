@@ -24,8 +24,8 @@ public class QuestEntry {
     public short minReqLevel;
     public short maxReqLevel;
     public short recommendedLevel;
-    public int playerClass;
-
+    public short playerClass;
+    public short playerClass2;
     public byte interConnectQuest;
 
     public int parentQuestID;
@@ -97,8 +97,7 @@ public class QuestEntry {
     public byte m_IsGuildQuest;
     public _SYSTEMTIME m_MissionStartDate = new _SYSTEMTIME();
     public _SYSTEMTIME m_MissionEndDate = new _SYSTEMTIME();
-    public byte[] m_MissionWeek = new byte[7];
-
+    public String m_MissionWeek = "       ";
 
     @Override
     public String toString() {
@@ -342,7 +341,8 @@ public class QuestEntry {
         writer.writeShort(minReqLevel);
         writer.writeShort(maxReqLevel);
         writer.writeShort(recommendedLevel);
-        writer.writeInt(playerClass);
+        writer.writeShort(playerClass);
+        writer.writeShort(playerClass2);
         writer.writeByte(interConnectQuest);
         writer.writeInt(parentQuestID);
         writer.writeInt(childQuestID);
@@ -586,7 +586,7 @@ public class QuestEntry {
         {
             m_MissionStartDate.write(writer);
             m_MissionEndDate.write(writer);
-            writer.writeBlock(m_MissionWeek);
+            writer.writeBlock(Util.stringToBt(m_MissionWeek, 7));
         }
         if (FILE_VERSION >= 30 )
         {
@@ -630,7 +630,8 @@ public class QuestEntry {
 
 
         //playerClass = reader.readShort();
-        playerClass = reader.readInt();
+        playerClass = reader.readShort();
+        playerClass2 = reader.readShort();
         //connected quest? no idea yet
         interConnectQuest = reader.readByte();
         parentQuestID = reader.readInt();
@@ -856,7 +857,7 @@ public class QuestEntry {
         {
             m_MissionStartDate.Load(reader);
             m_MissionEndDate.Load(reader);
-            m_MissionWeek = reader.readBlock(7);
+            m_MissionWeek = reader.getString(7);
         }
         if (FILE_VERSION >= 30 )
         {
